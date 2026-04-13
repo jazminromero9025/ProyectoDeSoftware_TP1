@@ -1,0 +1,11 @@
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\jazro\source\repos\TP1_Proyecto_de_software\Domain\obj\Debug\net8.0\ref\Domain.dll
