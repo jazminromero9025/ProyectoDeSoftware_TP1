@@ -17,7 +17,7 @@ namespace Domain.Entities
 
             public SeatStatus Status { get; set; }
 
-            // 🔥 CONCURRENCIA
+            // CONCURRENCIA
             public byte[] RowVersion { get; set; }
         }
 }
