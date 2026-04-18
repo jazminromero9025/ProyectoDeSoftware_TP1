@@ -1,5 +1,4 @@
-﻿
-using Application.Queries;
+﻿using Application.UseCases.Seats.Queries;
 using Domain.Entities;
 
 namespace Application.Interfaces

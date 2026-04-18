@@ -1,6 +1,6 @@
 ﻿
 using Application.Interfaces;
-using Application.Queries;
+using Application.UseCases.Seats.Queries;
 using Domain.Entities;
 using Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;

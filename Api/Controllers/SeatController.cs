@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Application.Interfaces;
+﻿using Application.Interfaces;
+using Application.UseCases.Seats.Queries;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/sectors/{sectorId}/seats")]
     public class SeatsController : ControllerBase
     {
         private readonly ISeatService _seatService;
@@ -18,7 +19,9 @@ namespace Api.Controllers
         [HttpGet("sector/{sectorId}")]
         public async Task<IActionResult> GetBySector(Guid sectorId)
         {
-            var result = await _seatService.GetSeatsBySectorAsync(sectorId);
+            // Aquí "empaquetamos" el dato en el Query
+            var query = new GetSeatsBySectorQuery(sectorId);
+            var result = await _seatService.GetSeatsBySectorAsync(query);
 
             return Ok(result);
         }
