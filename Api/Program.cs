@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application.Interfaces;
+using Application.Services;
 using Infraestructure.Data;
+using Infraestructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 
 
@@ -10,6 +13,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 // Add services to the container.
+// Registrar el Repositorio (Capa de Infraestructura)
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+
+// Registrar el Servicio (Capa de Aplicación)
+builder.Services.AddScoped<ISeatService, SeatService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

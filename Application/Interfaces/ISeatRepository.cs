@@ -1,0 +1,11 @@
+﻿
+using Application.Queries;
+using Domain.Entities;
+
+namespace Application.Interfaces
+{
+    public interface ISeatRepository
+    {
+        Task<IEnumerable<Seat>> GetBySectorIdAsync(GetSeatsBySectorQuery query);
+    }
+}
