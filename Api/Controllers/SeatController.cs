@@ -22,7 +22,7 @@ namespace Api.Controllers
 
 
             if (sectorId == Guid.Empty)
-                return BadRequest("ID inválido");
+                return BadRequest("ID inválido"); //devuelve 
 
 
 
