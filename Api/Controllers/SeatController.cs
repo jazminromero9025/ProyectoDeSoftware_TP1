@@ -19,6 +19,13 @@ namespace Api.Controllers
         [HttpGet("sector/{sectorId}")]
         public async Task<IActionResult> GetBySector(Guid sectorId)
         {
+
+
+            if (sectorId == Guid.Empty)
+                return BadRequest("ID inválido");
+
+
+
             // Aquí "empaquetamos" el dato en el Query
             var query = new GetSeatsBySectorQuery(sectorId);
             var result = await _seatService.GetSeatsBySectorAsync(query);
