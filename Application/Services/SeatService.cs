@@ -2,6 +2,7 @@
 using Application.DTOs;
 using Application.Interfaces;
 using Application.UseCases.Seats.Queries;
+using Domain.Entities;
 
 namespace Application.Services
 {
@@ -15,10 +16,13 @@ namespace Application.Services
             _seatRepository = seatRepository;
         }
 
-        public async Task<List<SeatDTO>> GetSeatsBySectorAsync(GetSeatsBySectorQuery query )
+        public async Task<List<SeatDTO>> GetSeatsBySectorAsync(Guid sectorId  )
         {
-            // El service delega la búsqueda al repositorio usando el query
-            var seats = await _seatRepository.GetBySectorIdAsync(query);
+            // El Service crea el Query 
+            var query = new GetSeatsBySectorQuery(sectorId);
+
+            // El Service le pasa el Query al Repositorio
+            var seats = await _seatRepository.GetSeatsBySectorQueryAsync(query);
 
             // Mapeo de entidad a DTO
             return seats.Select(s => new SeatDTO

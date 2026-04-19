@@ -5,6 +5,7 @@ namespace Application.Interfaces
 {
     public interface ISeatRepository
     {
-        Task<IEnumerable<Seat>> GetBySectorIdAsync(GetSeatsBySectorQuery query);
+        // El repositorio recibe el objeto Query completo
+        Task<IEnumerable<Seat>> GetSeatsBySectorQueryAsync(GetSeatsBySectorQuery query);
     }
 }

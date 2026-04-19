@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Interfaces
+﻿namespace Application.Interfaces
 {
     public interface IGetSeatsBySectorQuery
     {
-        Guid SectorId { get; set; }
-
+        Guid SectorId { get; init; }
     }
 }

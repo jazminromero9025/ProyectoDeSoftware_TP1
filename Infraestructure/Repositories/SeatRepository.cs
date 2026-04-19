@@ -16,7 +16,7 @@ namespace Infraestructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Seat>> GetBySectorIdAsync(GetSeatsBySectorQuery query)
+        public async Task<IEnumerable<Seat>> GetSeatsBySectorQueryAsync(GetSeatsBySectorQuery query)
         {
             return await _context.Seats
                 .Where(s => s.SectorId == query.SectorId)

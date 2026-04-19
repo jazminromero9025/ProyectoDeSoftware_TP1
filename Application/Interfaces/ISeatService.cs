@@ -5,6 +5,6 @@ namespace Application.Interfaces
 {
     public interface ISeatService
     {
-        Task<List<SeatDTO>> GetSeatsBySectorAsync(GetSeatsBySectorQuery query);
+        Task<List<SeatDTO>> GetSeatsBySectorAsync(Guid sectorId);
     }
 }

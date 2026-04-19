@@ -1,36 +1,24 @@
 ﻿using Application.Interfaces;
-using Application.UseCases.Seats.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers
+[ApiController]
+[Route("api/v1/sectors")]
+public class SeatsController : ControllerBase
 {
-    [ApiController]
-    [Route("api/v1/sectors/{sectorId}/seats")]
-    public class SeatsController : ControllerBase
+    private readonly ISeatService _seatService;
+
+    public SeatsController(ISeatService seatService)
     {
-        private readonly ISeatService _seatService;
+        _seatService = seatService;
+    }
 
-        // se inyecta el service
-        public SeatsController(ISeatService seatService)
-        {
-            _seatService = seatService;
-        }
+    [HttpGet("{sectorId}/seats")]
+    public async Task<IActionResult> GetBySector(Guid sectorId)
+    {
+        // 1. El Controller recibe el dato (sectorId)
+        // 2. Simplemente le dice al Service: "Tomá, procesá esto"
+        var result = await _seatService.GetSeatsBySectorAsync(sectorId);
 
-        [HttpGet("sector/{sectorId}")]
-        public async Task<IActionResult> GetBySector(Guid sectorId)
-        {
-
-
-            if (sectorId == Guid.Empty)
-                return BadRequest("ID inválido"); //devuelve 
-
-
-
-            // Aquí "empaquetamos" el dato en el Query
-            var query = new GetSeatsBySectorQuery(sectorId);
-            var result = await _seatService.GetSeatsBySectorAsync(query);
-
-            return Ok(result);
-        }
+        return Ok(result);
     }
 }
